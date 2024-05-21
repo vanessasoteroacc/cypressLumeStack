@@ -1,6 +1,13 @@
 
 
+export const selectorsList ={
+    usernameField: "[name='username']",
+    passwordField: "[name='password']",
+    loginButton:"[type='submit']"
+}
+
 Cypress.Commands.add('login', (
+    
     user = Cypress.env('user_name'),
     password = Cypress.env('user_password'),
 
@@ -8,9 +15,9 @@ Cypress.Commands.add('login', (
 
     const login = () => {
         cy.visit('/web/index.php/auth/login')
-        cy.get("[name='username']").type(user)
-        cy.get("[name='password']").type(password)
-        cy.get("[type='submit']").click()
+        cy.get(selectorsList.usernameField).type(user)
+        cy.get(selectorsList.passwordField).type(password)
+        cy.get(selectorsList.loginButton).click()
         cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
         cy.get('.oxd-topbar-header-breadcrumb-module').contains('Dashboard')
     }
