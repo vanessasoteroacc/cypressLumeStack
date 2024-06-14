@@ -1,3 +1,5 @@
+
+
 describe('Orange HRM Tests', () => {
   it('Login Success', () => {
     
@@ -7,4 +9,4 @@ describe('Orange HRM Tests', () => {
     cy.login(user, password)
 
   })
-})
+}) 
