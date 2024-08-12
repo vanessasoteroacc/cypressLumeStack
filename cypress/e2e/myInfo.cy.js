@@ -5,7 +5,7 @@ describe('Orange HRM Tests', () => {
         cy.login()
     } )
 
-    it.only('User Info' , ()=>{
+    it('User Info' , ()=>{
         cy.myInfo()
         
     })
